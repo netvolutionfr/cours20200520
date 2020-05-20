@@ -3,9 +3,6 @@ header('Content-Type: application/json');
 
 require_once('connexion.php');
 
-$requete = $bdd->query('SELECT * FROM produits');
-
-
 if (isset($_GET['id'])) {
     $requete = $bdd->prepare('SELECT * FROM produits WHERE id=?');
     $requete->bindParam(1, $_GET['id']);
